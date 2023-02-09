@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 
 /* Extrarnal */
-import 'flowbite';
 import 'swiper/css';
 
 function App() {
