@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import Collection from '../../components/Collection/Collection';
 import DiscountBanner from '../../components/DiscountBanner/DiscountBanner';
+import Blog from '../../components/Blog/Blog';
 export default function Home() {
     SwiperCore?.use([Autoplay])
     return (
@@ -43,6 +44,7 @@ export default function Home() {
             </div>
             <Collection />
             <DiscountBanner />
+            <Blog />
         </div>
     )
 }
