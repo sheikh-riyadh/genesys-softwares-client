@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+html,
+body {
+  background-color: #f0f0f0;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -28,7 +33,7 @@
   color: #61dafb;
 }
 
-.swiper-pagination {
+/* .swiper-pagination {
   position: absolute;
   text-align: center;
   transition: .3s opacity;
@@ -39,7 +44,7 @@
 
 .swiper-pagination .swiper-pagination-bullet {
   background-color: #f8f8f8;
-}
+} */
 
 @keyframes App-logo-spin {
   from {
