@@ -2,7 +2,7 @@ import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 export default function Footer() {
     return (
 
-        <footer className="px-3 md:px-5 lg:px-[40px] xl:px-[91px] py-[95px]">
+        <footer className="px-3 md:px-5 lg:px-[40px] xl:px-[91px] pt-24 pb-5">
             <div className="grid md:grid-cols-3 xl:grid-cols-12 gap-10 mb-24">
                 <div className="xl:col-span-3 text-start">
                     <img src="/assets/logo.png" alt="" />
@@ -10,35 +10,35 @@ export default function Footer() {
                 </div>
                 <div className="xl:col-span-2 text-start">
                     <h1 className="uppercase font-semibold">Menu</h1>
-                    <ul>
-                        <li className="mt-2 xl:mt-4">Home</li>
-                        <li className="mt-2 xl:mt-4">Gift Card</li>
-                        <li className="mt-2 xl:mt-4">Seasonal</li>
-                        <li className="mt-2 xl:mt-4">Kid & Nursery</li>
-                        <li className="mt-2 xl:mt-4">Pet</li>
-                        <li className="mt-2 xl:mt-4">Gift Registry</li>
+                    <ul className="flex flex-col gap-1 xl:gap-3">
+                        <li>Home</li>
+                        <li>Gift Card</li>
+                        <li>Seasonal</li>
+                        <li>Kid & Nursery</li>
+                        <li>Pet</li>
+                        <li>Gift Registry</li>
                     </ul>
                 </div>
                 <div className="xl:col-span-2 text-start">
                     <h1 className="uppercase font-semibold">Menu</h1>
-                    <ul>
-                        <li className="mt-2 xl:mt-4">Home</li>
-                        <li className="mt-2 xl:mt-4">Gift Card</li>
-                        <li className="mt-2 xl:mt-4">Seasonal</li>
-                        <li className="mt-2 xl:mt-4">Kid & Nursery</li>
-                        <li className="mt-2 xl:mt-4">Pet</li>
-                        <li className="mt-2 xl:mt-4">Gift Registry</li>
+                    <ul className="flex flex-col gap-1 xl:gap-3">
+                        <li>Home</li>
+                        <li>Gift Card</li>
+                        <li>Seasonal</li>
+                        <li>Kid & Nursery</li>
+                        <li>Pet</li>
+                        <li>Gift Registry</li>
                     </ul>
                 </div>
                 <div className="xl:col-span-2 text-start">
                     <h1 className="uppercase font-semibold">Menu</h1>
-                    <ul>
-                        <li className="mt-2 xl:mt-4">Home</li>
-                        <li className="mt-2 xl:mt-4">Gift Card</li>
-                        <li className="mt-2 xl:mt-4">Seasonal</li>
-                        <li className="mt-2 xl:mt-4">Kid & Nursery</li>
-                        <li className="mt-2 xl:mt-4">Pet</li>
-                        <li className="mt-2 xl:mt-4">Gift Registry</li>
+                    <ul className="flex flex-col gap-1 xl:gap-3">
+                        <li>Home</li>
+                        <li>Gift Card</li>
+                        <li>Seasonal</li>
+                        <li>Kid & Nursery</li>
+                        <li>Pet</li>
+                        <li>Gift Registry</li>
                     </ul>
                 </div>
                 <div className="xl:col-span-3 text-start">
@@ -75,6 +75,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="divider"></div>
+            <p className="text-center">© Copyright 2022 by Cole & Son. All rights reserved.</p>
         </footer>
     )
 }
