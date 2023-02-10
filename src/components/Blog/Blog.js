@@ -6,7 +6,7 @@ export default function Blog() {
     return (
         <div className='py-7 lg:py-[50px] xl:py-[100px] bg-white'>
             <h2 className='uppercase text-[28px] text-center pb-6 xl:pb-12'>our blog</h2>
-            <div className='grid md:grid-cols-2 lg:grid-rows-4 gap-3 px-3 md:px-5 lg:px-[40px] xl:px-[177px]'>
+            <div className='grid md:grid-cols-2 lg:grid-rows-2 xl:grid-rows-3 gap-3 px-3 md:px-5 lg:px-[40px] xl:px-[177px]'>
                 <div className='xl:row-span-3 flex gap-2 xl:flex-col xl:border-r-2'>
                     <img src={blog1} alt="blog_image" className='w-[350px] h-[150px] xl:h-[490px] xl:w-full xl:pr-3' />
                     <div className='text-start text-[#2D2929]'>

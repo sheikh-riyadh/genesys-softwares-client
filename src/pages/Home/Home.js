@@ -3,6 +3,7 @@ import SwiperCore, { Autoplay, Pagination } from 'swiper';
 import Collection from '../../components/Collection/Collection';
 import DiscountBanner from '../../components/DiscountBanner/DiscountBanner';
 import Blog from '../../components/Blog/Blog';
+import Footer from '../SharedPage/Footer/Footer';
 export default function Home() {
     SwiperCore?.use([Autoplay])
     return (
@@ -45,6 +46,7 @@ export default function Home() {
             <Collection />
             <DiscountBanner />
             <Blog />
+            <Footer />
         </div>
     )
 }
