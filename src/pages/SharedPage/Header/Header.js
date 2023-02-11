@@ -1,5 +1,7 @@
+import React from 'react';
 import { AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
+import { Link } from 'react-router-dom';
 import Notice from "../../../components/Notice/Notice";
 
 export default function Header() {
@@ -7,12 +9,12 @@ export default function Header() {
     const navItems = () => {
         return (
             <>
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Shop</a></li>
-                <li><a href="/">About Us</a></li>
-                <li><a href="/">Contact Us</a></li>
-                <li><a href="/">Login</a></li>
-                <li><a href="/">Register</a></li>
+                <li className='px-1'><Link to='/'>Home</Link></li>
+                <li className='px-1'><Link to='/'>Shop</Link></li>
+                <li className='px-1'><Link to='/'>About Us</Link></li>
+                <li className='px-1'><Link to='/'>Contact Us</Link></li>
+                <li className='px-1'><Link to='login'>Login</Link></li>
+                <li className='px-1'><Link to='/register'>Register</Link></li>
             </>
         )
     }
@@ -35,9 +37,9 @@ export default function Header() {
                         </ul>
                     </div>
                 </div>
-                <a href="/" className="btn btn-ghost normal-case text-xl">
+                <Link to='/' className="btn btn-ghost normal-case text-xl">
                     <img src="assets/logo.png" alt="Logo" className="w-8 lg:w-11" />
-                </a>
+                </Link>
                 <div className="navbar-end gap-2">
                     <div className="w-36 flex justify-center items-center relative">
                         <input type="text" className="input w-full outline-none border-0 focus:outline-none hover:bg-slate-300 bg-[#F0F0F0] hover:rounded-full" />

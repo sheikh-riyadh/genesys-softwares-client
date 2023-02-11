@@ -1,4 +1,6 @@
+import React from 'react';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 export default function Login() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -6,12 +8,8 @@ export default function Login() {
         console.log(data)
     }
 
-
-
-
-
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen bg-white">
             <div>
                 <h2 className="text-[32px]">Login</h2>
                 <div className="card flex-shrink-0 w-[600px]">
@@ -30,9 +28,9 @@ export default function Login() {
                             <button className="btn bg-[#4E4534] rounded-none text-xl">Login</button>
                         </div>
                         <label className="label justify-center gap-3">
-                            <a href="/">Create account</a>
+                            <Link to='/register' className='link link-hover'>Create account</Link>
                             /
-                            <a href="/">Forgot password?</a>
+                            <span className='link link-hover cursor-pointer'>Forgot password?</span>
                         </label>
                     </form>
                 </div>

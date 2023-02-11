@@ -3,14 +3,15 @@ import './App.css';
 /* Extrarnal */
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Header from './pages/SharedPage/Header/Header';
-import Home from './pages/Home/Home';
+import { RouterProvider } from 'react-router-dom';
+import { router } from './routes/routes';
 
 function App() {
   return (
     <div className="App">
-      <Header></Header>
-      <Home></Home>
+      <RouterProvider router={router}>
+
+      </RouterProvider>
     </div>
   );
 }

@@ -1,4 +1,6 @@
+import React from 'react';
 import { useForm } from "react-hook-form";
+import { Link } from 'react-router-dom';
 export default function Register() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -6,12 +8,8 @@ export default function Register() {
         console.log(data)
     }
 
-
-
-
-
     return (
-        <div className="hero min-h-screen">
+        <div className="hero min-h-screen bg-white">
             <div>
                 <h2 className="text-[32px]">CREATE ACCOUNT</h2>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
@@ -43,8 +41,8 @@ export default function Register() {
                             <button className="btn bg-[#4E4534] rounded-none text-xl">Create</button>
                         </div>
                         <label className="label justify-start gap-3">
-                            <a href="/">Already have an account?</a>
-                            <a href="/" className="link link-hover">Back to Login</a>
+                            <span>Already have an account?</span>
+                            <Link to='/login' className="link link-hover">Back to Login</Link>
                         </label>
                     </form>
                 </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 export default function DiscountBanner() {
     return (
         <div className="bg-discount_banner bg-no-repeat bg-left bg-cover ">

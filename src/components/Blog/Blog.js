@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion'
 import blog1 from '../../banner-images/blog-1.jpg'
 import blog2 from '../../banner-images/blog-2.jpg'
