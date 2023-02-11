@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 import Notice from "../../../components/Notice/Notice";
+import { AuthContext } from '../../../context/AuthProvider';
 
 export default function Header() {
+
+    const { user, logOutUser } = useContext(AuthContext)
+    const handleLogout = () => {
+        logOutUser().then()
+    }
+
+
+
 
     const navItems = () => {
         return (
@@ -19,9 +28,18 @@ export default function Header() {
                         <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
                     </span>
                     <ul className="p-2 bg-[#F0F0F0]">
-                        <li className='py-1'><Link to='login'>Login</Link></li>
-                        <li className='py-1'><Link to='/register'>Register</Link></li>
-                        <li className='py-1'><Link to='/register'>Dashboard</Link></li>
+                        {
+                            user?.uid ?
+                                <>
+                                    <li className='py-1'><Link to='/register'>Dashboard</Link></li>
+                                    <li className='py-1'><button onClick={handleLogout}>Log-out</button></li>
+                                </>
+                                :
+                                <>
+                                    <li className='py-1'><Link to='login'>Login</Link></li>
+                                    <li className='py-1'><Link to='/register'>Register</Link></li>
+                                </>
+                        }
                     </ul>
                 </li>
 

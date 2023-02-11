@@ -1,11 +1,35 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
+import { toast } from 'react-hot-toast';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 export default function Login() {
 
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [loadin, setLoaing] = useState(false)
+    const navigate = useNavigate()
+    const { userLogin } = useContext(AuthContext)
+
+    /* React hook form */
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+
+    /* Handle user login here */
     const handleLogin = (data) => {
-        console.log(data)
+        const { email, password } = data
+        userLogin(email, password).then(res => {
+            navigate('/')
+            toast.success('Login successfull')
+            setLoaing(false)
+            reset()
+        }).catch(error => {
+            setLoaing(false)
+            reset()
+            if (error.message === 'Firebase: Error (auth/wrong-password).') {
+                toast.error('Incorrect password')
+            } else if (error.message === 'Firebase: Error (auth/user-not-found).') {
+                toast.error('User not found please register')
+            }
+            console.log(error)
+        })
     }
 
     return (
@@ -25,12 +49,12 @@ export default function Login() {
                             {errors.password && <p role="alert" className="text-start mt-3 text-red-700">{errors.password?.message}</p>}
                         </div>
                         <div className="form-control mt-3">
-                            <button className="btn bg-[#4E4534] rounded-none text-xl">Login</button>
+                            <button className="btn bg-[#4E4534] rounded-none text-xl">{loadin ? "Processing..." : "Login"}</button>
                         </div>
                         <label className="label justify-center gap-3">
                             <Link to='/register' className='link link-hover'>Create account</Link>
                             /
-                            <span className='link link-hover cursor-pointer'>Forgot password?</span>
+                            <Link to='/recover-password' className='link link-hover cursor-pointer'>Forgot password?</Link>
                         </label>
                     </form>
                 </div>
