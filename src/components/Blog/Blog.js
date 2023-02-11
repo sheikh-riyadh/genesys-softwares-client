@@ -88,6 +88,7 @@ export default function Blog() {
                     </div>
                 </motion.div>
             </div>
+            <button className="btn btn-outline outline-[#32D2929] text-[#2D2929] xl:px-16 xl:text-lg mt-8 lg:mt[45px] xl:mt-[60px] rounded-none">View all blogs</button>
         </div>
     )
 }
