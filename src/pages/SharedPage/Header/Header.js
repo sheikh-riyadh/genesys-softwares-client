@@ -13,21 +13,31 @@ export default function Header() {
                 <li className='px-1'><Link to='/'>Shop</Link></li>
                 <li className='px-1'><Link to='/'>About Us</Link></li>
                 <li className='px-1'><Link to='/'>Contact Us</Link></li>
-                <li className='px-1'><Link to='login'>Login</Link></li>
-                <li className='px-1'><Link to='/register'>Register</Link></li>
+                <li tabIndex={20} className='z-50 bg-[#F0F0F0]'>
+                    <span className='cursor-pointer'>
+                        Acount
+                        <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                    </span>
+                    <ul className="p-2 bg-[#F0F0F0]">
+                        <li className='px-1'><Link to='login'>Login</Link></li>
+                        <li className='px-1'><Link to='/register'>Register</Link></li>
+                        <li className='px-1'><Link to='/register'>Dashboad</Link></li>
+                    </ul>
+                </li>
+
             </>
         )
     }
     return (
         <div className="">
             <Notice />
-            <div className="navbar lg:px-[91px] py-2 bg-[#F0F0F0]">
+            <div className="navbar xl:px-[91px] py-2 bg-[#F0F0F0]">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </label>
-                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-sm">
+                        <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-[#F0F0F0] rounded-box w-52 text-sm">
                             {navItems()}
                         </ul>
                     </div>
@@ -57,9 +67,9 @@ export default function Header() {
                             <div tabIndex={0} className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow">
                                 <div className="card-body">
                                     <span className="font-bold text-lg">8 Items</span>
-                                    <span className="text-info">Subtotal: $999</span>
+                                    <span className="text-[#4E4534]">Subtotal: $999</span>
                                     <div className="card-actions">
-                                        <button className="btn btn-primary btn-block">View cart</button>
+                                        <button className="btn bg-[#4E4534] btn-block">View cart</button>
                                     </div>
                                 </div>
                             </div>

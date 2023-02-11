@@ -9,10 +9,10 @@ export default function Login() {
     }
 
     return (
-        <div className="hero min-h-screen bg-white">
+        <div className="hero py-24 bg-white">
             <div>
                 <h2 className="text-[32px]">Login</h2>
-                <div className="card flex-shrink-0 w-[600px]">
+                <div className="card flex-shrink-0 xl:w-[600px]">
                     <form onSubmit={handleSubmit(handleLogin)} className="card-body">
                         <div className="form-control">
                             <input {...register("email", { required: "Email field is required" })} name="email" type="email" placeholder="email" className="input input-bordered rounded-none" />

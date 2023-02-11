@@ -4,17 +4,17 @@ import { Link } from 'react-router-dom';
 export default function Register() {
 
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const handleLogin = (data) => {
+    const handleRegister = (data) => {
         console.log(data)
     }
 
     return (
-        <div className="hero min-h-screen bg-white">
+        <div className="hero py-24 bg-white">
             <div>
                 <h2 className="text-[32px]">CREATE ACCOUNT</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                <div className="card flex-shrink-0 w-[600px]">
-                    <form onSubmit={handleSubmit(handleLogin)} className="card-body">
+                <p className='px-12'>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                <div className="card flex-shrink-0 xl:w-[600px]">
+                    <form onSubmit={handleSubmit(handleRegister)} className="card-body">
                         <div className="form-control">
                             <input {...register("fName", { required: "First name field is required" })} name="fName" type="text" placeholder="First name" className="input input-bordered rounded-none" />
                             {errors.fName && <p role="alert" className="text-start mt-3 text-red-700">{errors.fName?.message}</p>}
