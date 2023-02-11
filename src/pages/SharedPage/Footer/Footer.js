@@ -57,15 +57,14 @@ export default function Footer() {
             </div>
             <div className="form-control">
                 <div className="input-group justify-end mb-5">
-                    <select className="select select-bordered rounded-none">
-                        <option disabled selected>United States(USD $)</option>
-                        <option>T-shirts</option>
-                        <option>Mugs</option>
+                    <select defaultValue={'DEFAULT'} className="select select-bordered">
+                        <option value="DEFAULT">United States (USD $)</option>
+                        <option value={"BDT"}>BDT</option>
                     </select>
                 </div>
             </div>
             <div className="flex justify-between items-center">
-                <div className="flex gap-5">
+                <div className="flex gap-5 cursor-pointer">
                     <FaFacebook />
                     <FaTwitter />
                     <FaInstagram />
