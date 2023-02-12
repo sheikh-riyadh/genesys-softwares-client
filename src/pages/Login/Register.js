@@ -15,10 +15,24 @@ export default function Register() {
         setLoaing(true)
         const { email, password } = data
         registerUser(email, password).then(res => {
-            toast.success("Registration successfull.")
-            setLoaing(false)
-            reset()
-            navigate('/')
+
+            fetch(`${process.env.REACT_APP_api_url}/users`, {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            }).then(res => res.json()).then(data => {
+                if (data?.acknowledged) {
+                    toast.success("Registration successfull.")
+                    setLoaing(false)
+                    reset()
+                    navigate('/')
+                }
+            }).catch(error => {
+                setLoaing(false)
+                reset()
+            })
 
         }).catch(error => {
             setLoaing(false)

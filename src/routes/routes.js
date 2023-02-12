@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../layout/Main";
+import Dashboard from "../pages/Dashboard/Dashboard";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Recover from "../pages/Login/Recover";
@@ -22,6 +23,9 @@ export const router = createBrowserRouter([
             }, {
                 path: '/recover-password',
                 element: <Recover />
+            }, {
+                path: '/dashboard',
+                element: <Dashboard />
             }
         ]
     }

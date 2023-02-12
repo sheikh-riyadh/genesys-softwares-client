@@ -7,8 +7,7 @@ const auth = getAuth(app)
 export default function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
-
+    let [count, setCount] = useState(0)
 
     /* Create user here */
     const registerUser = (email, password) => {
@@ -36,8 +35,6 @@ export default function AuthProvider({ children }) {
         return signOut(auth);
     }
 
-
-
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setLoading(false);
@@ -45,7 +42,8 @@ export default function AuthProvider({ children }) {
         });
         return () => unsubscribe();
     }, []);
-    const authInfo = { loading, user, registerUser, userLogin, logOutUser, recoverPassword }
+    const authInfo = { loading, user, registerUser, userLogin, logOutUser, recoverPassword, count, setCount }
+
     return (
         <AuthContext.Provider value={authInfo}>
             {children}

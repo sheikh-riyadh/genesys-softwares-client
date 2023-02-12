@@ -14,14 +14,18 @@ export default function Recover() {
         setLoaing(true)
         const { email } = data
         recoverPassword(email).then(res => {
-            toast.success("Password reset email sent please check your email.")
+            toast.success("Password reset email sent please check your email.", {
+                duration: 5000,
+            })
             setLoaing(false)
             reset()
         }).catch(error => {
             setLoaing(false)
             reset()
             if (error.message === 'Firebase: Error (auth/user-not-found).') {
-                toast.error('User not found please register')
+                toast.error('User not found please register', {
+                    duration: 5000,
+                })
             }
 
             console.log(error)

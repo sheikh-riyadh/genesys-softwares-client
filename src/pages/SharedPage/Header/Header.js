@@ -12,9 +12,6 @@ export default function Header() {
         logOutUser().then()
     }
 
-
-
-
     const navItems = () => {
         return (
             <>
@@ -31,7 +28,7 @@ export default function Header() {
                         {
                             user?.uid ?
                                 <>
-                                    <li className='py-1'><Link to='/register'>Dashboard</Link></li>
+                                    <li className='py-1'><Link to='/dashboard'>Dashboard</Link></li>
                                     <li className='py-1'><button onClick={handleLogout}>Log-out</button></li>
                                 </>
                                 :
