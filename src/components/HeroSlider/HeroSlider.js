@@ -36,7 +36,7 @@ export default function HeroSlider() {
                                         }
                                     }
                                 >
-                                    <h1 className='text-[40px]'>Lorem Ipsum is simply dummy text of the printing</h1>
+                                    <h1 className='text-[40px]'>SHOP WISE WITH PRICE COMPARISONS</h1>
                                     <p>Lorem Ipsum is simply dummy text of the.</p>
                                     <div className='mt-5 lg:flex'>
                                         <button className='btn bg-[#BCB2A0] rounded-none px-16 border-0'>shop now</button>

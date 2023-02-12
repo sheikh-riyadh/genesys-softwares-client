@@ -36,6 +36,7 @@ export default function Login() {
         <div className="hero py-24 bg-white">
             <div>
                 <h2 className="text-[32px]">Login</h2>
+                <span className='italic font-semibold'>user: johnpetter@gmail.com</span> / <span className='italic font-semibold'>pass: johnpetter3258</span>
                 <div className="card flex-shrink-0 xl:w-[600px]">
                     <form onSubmit={handleSubmit(handleLogin)} className="card-body">
                         <div className="form-control">

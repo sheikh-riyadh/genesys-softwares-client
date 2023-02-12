@@ -7,11 +7,23 @@ import collection3 from '../../banner-images/collection-3.jpg'
 import collection4 from '../../banner-images/collection-4.jpg'
 import collection5 from '../../banner-images/collection-5.jpg'
 import collection6 from '../../banner-images/collection-6.jpg'
+import { motion } from 'framer-motion';
 export default function Collection() {
     SwiperCore?.use([Autoplay])
     return (
         <div className='px-3 md:px-5 lg:px-[40px] xl:px-[91px] py-7 lg:py-[50px] xl:py-[100px]'>
-            <h2 className='uppercase text-[28px] text-start pb-6 xl:pb-12'>our collections</h2>
+            <motion.h2 className='uppercase text-[28px] text-start pb-6 xl:pb-12'
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: .5 }}
+                variants={
+                    {
+                        hidden: { opacity: 0, x: -50 },
+                        visible: { opacity: 1, x: 0 }
+                    }
+                }
+            >our collections</motion.h2>
             <Swiper
                 modules={[Pagination]}
                 slidesPerView={3}
@@ -48,7 +60,7 @@ export default function Collection() {
                             >
                                 <div className='mb-20'>
                                     <img src={collection} alt="Collection_image" className='h-[370px] w-full' />
-                                    <h3>Flower</h3>
+                                    <h3>{index === 0 ? "Flower" : "Candles"}</h3>
                                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum is simply</p>
                                 </div>
                             </SwiperSlide>

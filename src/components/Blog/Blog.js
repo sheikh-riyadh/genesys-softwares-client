@@ -8,7 +8,18 @@ import blog4 from '../../banner-images/blog-4.jpg'
 export default function Blog() {
     return (
         <div className='py-7 lg:py-[50px] xl:py-[100px] bg-white'>
-            <h2 className='uppercase text-[28px] text-center pb-6 xl:pb-12'>our blog</h2>
+            <motion.h2 className='uppercase text-[28px] text-center pb-6 xl:pb-12'
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.5 }}
+                transition={{ duration: .5 }}
+                variants={
+                    {
+                        hidden: { opacity: 0, y: -50 },
+                        visible: { opacity: 1, y: 0 }
+                    }
+                }
+            >our blog</motion.h2>
             <div className='grid md:grid-cols-2 lg:grid-rows-2 xl:grid-rows-3 gap-3 px-3 md:px-5 lg:px-[40px] xl:px-[177px]'>
                 <motion.div className='xl:row-span-3 flex gap-2 xl:flex-col xl:border-r-2'
                     initial="hidden"
