@@ -14,6 +14,7 @@ export default function Login() {
 
     /* Handle user login here */
     const handleLogin = (data) => {
+        setLoaing(true)
         const { email, password } = data
         userLogin(email, password).then(res => {
             navigate('/')
@@ -25,8 +26,10 @@ export default function Login() {
             reset()
             if (error.message === 'Firebase: Error (auth/wrong-password).') {
                 toast.error('Incorrect password')
+                setLoaing(false)
             } else if (error.message === 'Firebase: Error (auth/user-not-found).') {
                 toast.error('User not found please register')
+                setLoaing(false)
             }
             console.log(error)
         })

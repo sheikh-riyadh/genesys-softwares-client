@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AiOutlineUser } from "react-icons/ai";
 import { BsSearch } from "react-icons/bs";
@@ -8,6 +9,15 @@ import { AuthContext } from '../../../context/AuthProvider';
 export default function Header() {
 
     const { user, logOutUser } = useContext(AuthContext)
+    const { data: users } = useQuery({
+        queryKey: ["users", user?.email],
+        queryFn: async () => {
+            const res = await fetch(`${process.env.REACT_APP_api_url}/user-role?email=${user?.email}`);
+            const data = await res.json()
+            return data
+        }
+    })
+
     const handleLogout = () => {
         logOutUser().then()
     }
@@ -28,7 +38,11 @@ export default function Header() {
                         {
                             user?.uid ?
                                 <>
-                                    <li className='py-1'><Link to='/dashboard'>Dashboard</Link></li>
+                                    {
+                                        users?.role === "admin" ? <li className='py-1'><Link to='/dashboard'>Dashboard</Link></li>
+                                            :
+                                            undefined
+                                    }
                                     <li className='py-1'><button onClick={handleLogout}>Log-out</button></li>
                                 </>
                                 :

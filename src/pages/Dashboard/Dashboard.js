@@ -18,7 +18,7 @@ export default function Dashboard() {
     }
 
     const handleDelete = (id) => {
-        const agree = window.confirm("Are you sure do you want to delete")
+        const agree = window.confirm("Are you sure do you want to delete?")
         if (agree) {
             fetch(`${process.env.REACT_APP_api_url}/users/${id}`, {
                 method: "DELETE",

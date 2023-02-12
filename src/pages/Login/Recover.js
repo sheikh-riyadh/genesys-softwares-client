@@ -23,6 +23,7 @@ export default function Recover() {
             setLoaing(false)
             reset()
             if (error.message === 'Firebase: Error (auth/user-not-found).') {
+                setLoaing(false)
                 toast.error('User not found please register', {
                     duration: 5000,
                 })
