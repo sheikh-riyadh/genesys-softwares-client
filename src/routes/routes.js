@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import Recover from "../pages/Login/Recover";
 import Register from "../pages/Login/Register";
+import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
@@ -25,7 +26,7 @@ export const router = createBrowserRouter([
                 element: <Recover />
             }, {
                 path: '/dashboard',
-                element: <Dashboard />
+                element: <PrivateRoute><Dashboard /></PrivateRoute>
             }
         ]
     }
